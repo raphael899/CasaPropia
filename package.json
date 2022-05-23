@@ -1,0 +1,25 @@
+{
+  "name": "proyectoscontrasenas",
+  "version": "1.0.0",
+  "description": "este proyecto tiene como finalidad guardar contraseñas, consumos de apis y creaciones de funciones",
+  "main": "vtprocon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon vtprocon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.29",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.0",
+    "socket.io": "^4.1.3",
+    "sweetalert2": "^11.0.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

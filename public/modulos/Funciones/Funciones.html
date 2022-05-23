@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        consultaFuncionesProyecto();
+        consultarfunciones();
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="">Proyecto</label>
+                    <select name="selProyecto" id="selProyecto" class="inputTextSele">
+                        <option value="0">Seleccionar...</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="">Nombre función</label>
+                    <input type="text" name="numbreFuncion" id="numbreFuncion" class="inputTextSele">
+                </div>
+                <div class="row">
+                    <label for="">Objetivo</label>
+                    <input type="text" name="bjetivoFuncion" id="bjetivoFuncion" class="inputTextSele">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="">Integracion</label>
+                    <select name="selIntegraciones" id="selIntegraciones" class="inputTextSele">
+                        <option value="0">Seleccionar...</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="">Tipo función</label>
+                    <input type="text" name="TipoFuncion" id="TipoFuncion" class="inputTextSele">
+                </div>
+                <div class="row">
+                    <label for="">Lugar de desarrollo</label>
+                    <input type="text" name="lugarFuncion" id="lugarFuncion" class="inputTextSele">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="">Descripción</label>
+                    <textarea name="descripcionFuncion" id="descripcionFuncion" cols="30" rows="10" class="inputTextSele"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="">Codigo</label>
+                    <textarea name="codigoFuncion" id="codigoFuncion" cols="30" rows="10" class="inputTextSele"></textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <a class=' form-control btn btn-block bg-success text-white' onclick="GuardarFuncion()"><i class="fas fa-save"></i> Guardar</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="tbl_funciones">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="./ZohoEmbededAppSDK.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="./morris.js"></script>
+        <link rel="stylesheet" href="./morris.css">
+    
+        
+        <style>
+            td.details-control {
+                background: url('./details_open.png') no-repeat center center;
+                cursor: pointer;
+            }
+            tr.shown td.details-control {
+                background: url('./details_close.png') no-repeat center center;
+            }
+        </style>
+        
+        <title>Terceros</title>
+    </head>
+    <body>
+        <br>
+        <div class="container">
+            <h4></h4>
+            <br>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+            <div id="CargarInformacion" style="text-align: center;">
+                <br><br><br>
+
+            </div>
+            
+
+            <div class="d-none" id = "tablatercero">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Fecha de creación</label>
+                        <input type="date" class="form-control" id="fecha_creacion" name="fecha_creacion" placeholder="Fecha de creación" style="border-color: #0600ff;">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Fecha de conversión</label>
+                        <input type="date" class="form-control" id="fecha_conversion" name="fecha_conversion" placeholder="Fecha de conversión" style="border-color: #428437;">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Fuente de candidato</label>
+                        <select class="form-control" id="fuente_candidato" name="fuente_candidato" style="border-color: #0600ff;">
+                            <option value=""></option>
+                            <option value="Google">Google</option>
+                            <option value="Redes sociales">Redes sociales</option>
+                            <option value="Internet">Internet</option>
+                            <option value="Referidos">Referidos</option>
+                            <option value="Eventos">Eventos</option>
+                            <option value="Medios Tradicionales">Medios Tradicionales</option>
+                            <option value="Ejecutivo de Ventas">Ejecutivo de Ventas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">País</label>
+                        <select class="form-control" id="pais" name="pais" onchange="comboestado()" style="border-color: #0600ff;" >
+                            <option value="">Seleccionar</option>
+                            <option value="Estados Unidos">Estados Unidos </option>
+                            <option value="España">España </option>
+                            <option value="Canada">Canada </option>
+                            <option value="Australia">Australia </option>
+                            <option value="Reino Unido">Reino Unido </option>
+                            <option value="Chile">Chile </option>
+                            <option value="Alemania">Alemania </option>
+                            <option value="New Zealand">New Zealand </option>
+                            <option value="Panama">Panama </option>
+                            <option value="Ecuador">Ecuador </option>
+                            <option value="Emiratos Arabes unidos">Emiratos Arabes unidos </option>
+                            <option value="Suiza">Suiza </option>
+                            <option value="Puerto Rico">Puerto Rico </option>
+                            <option value="Mexico">Mexico </option>
+                            <option value="Argentina">Argentina </option>
+                            <option value="Brasil">Brasil </option>
+                            <option value="Peru">Peru </option>
+                            <option value="Francia">Francia </option>
+                            <option value="Italia">Italia </option>
+                            <option value="Holanda">Holanda </option>
+                            <option value="Costa Rica">Costa Rica </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Estado</label>
+                        <select class="form-control" id="estado" name="estado" onchange="combociudades()" style="border-color: #0600ff;" >
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Ciudad</label>
+                        <select class="form-control" id="ciudad" name="ciudad" style="border-color: #0600ff;"  >
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Propietario</label>
+
+                        <select class="form-control" id="propietario" name="propietario" style="border-color: #0600ff;">
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Co-propietario</label>
+    
+                        <select class="form-control" class="form-control" id="co_propietario" name="co_propietario" style="border-color: #0600ff;" >
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Tipo de Potencial</label>
+                        <input type="text" class="form-control" id="tipo_potencial" name="tipo_potencial" placeholder="Tipo de Potencial" style="border-color: #428437;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Estado de candidao o fase</label>
+                        <select class="form-control" class="form-control" id="estado_fase" name="estado_fase" style="border-color: #f1c40f;" >
+                            <option value="">Seleccionar</option>
+                            <option value="">Anulado</option>
+                            <option value="">Contactado en Proceso</option>
+                            <option value="">Descartado</option>
+                            <option value="">Interesado</option>
+                            <option value="">No aprobado Sarlaft</option>
+                            <option value="">No contactado</option>
+                            <option value="">No contactado gestionado</option>
+                            <option value="">Pospuso trámite</option>
+                            <option value="">Pre validado Sarlaft</option>
+                            <option value="">Presentación propuesta</option>
+                            <option value="">Validación SARLAFT</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Campaña</label>
+                        <select class="form-control" class="form-control" id="campana" name="campana" style="border-color: #ff0000;" >
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <br>
+                        <input type="button" value="Buscar" class="form-control btn btn-success" onclick="consultaTercero(10)">
+                    </div>
+                </div>
+                <br>
+                <div class="table-responsive">
+                                            <!-- 
+                            Nombre
+                            Tipo de SErvicio
+                            Fuente
+                            Estado de Candidato o FAse
+                            Identificar que está como candidato y que como cliente con un check
+                            País
+                            Canal de Venta
+                            Fecha de Creación
+                            FEcha de conversión
+                            Propietario
+                            Poder identificar con un chek que cliente tiene co- propietario
+                        -->
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Nombre</th>
+                                <th>Tipo De Servicio</th>
+                                <th>Fuente</th>
+                                <th>Estado o Fase</th>
+                                <th>Tipo De Tercero</th>
+                                <th>País</th>
+                                <th>Canal de Venta</th>
+                                <th>Fecha de Creación</th>
+                                <th>Fecha de Conversión</th>
+                                <th>Propietario</th>
+                                <th>Co-propietario</th>
+                                <th>Interes Monetización</th>
+                                <th>Interes Venta</th>
+                                <th>Interes Crédito</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="row">
+                    <div id="graph"></div>
+                    <pre id="code" class="prettyprint linenums">
+                </div>
+            </div>
+
+
+  
+            <script src="./bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+            <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+            <script>const socket = io();</script>
+            <script src="./llamadas.js"></script>
+            <script>
+                consultaFuncionesProyecto();
+            </script>
+
+      
+            
+        </div>
+
+    </body>
+</html>

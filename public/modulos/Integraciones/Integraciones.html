@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>consultaIntegracionProyecto()</script>
+    <br>
+    <div class="container">
+        <div class="row">
+
+            <select name="selProyecto" id="selProyecto" class="inputTextSele"  onchange="consultarIntegracion()">
+                <option value="">Seleccionar proyecto</option>
+            </select>
+ 
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="in_nombre">Nombre Integración</label>
+                    <input type="text" name="in_nombre" id="in_nombre" class="inputTextSele">
+                </div>
+                <div class="row">
+                    <label for="in_tipo">Tipo Integración</label>
+                    <input type="text" name="in_tipo" id="in_tipo" class="inputTextSele">
+                </div>
+                <div class="row">
+                    <label for="in_proveedor">Proveedor Integración</label>
+                    <input type="text" name="in_proveedor" id="in_proveedor" class="inputTextSele">
+                </div>
+                <div class="row">
+                    <label for="in_url">URL Integración</label>
+                    <input type="text" name="in_url" id="in_url" class="inputTextSele">
+                </div>
+                <br>
+                <div class="row">
+                    <a class=' form-control btn btn-block bg-success text-white' onclick="GuardarIntegracion()"><i class="fas fa-save"></i> Guardar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="in_descripcion">Descripción Integración</label>
+                    <textarea name="in_descripcion" id="in_descripcion" class="inputTextSele" style="height: 224px;"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 table-responsive" id = "tablacontenidointegracion">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
